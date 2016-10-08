@@ -1,0 +1,13 @@
+---
+layout: default
+modal-id: 2
+date: 2015-01-01
+img: plumlytics.png
+alt: Plumlytics
+project-date: 2015
+client: Plumlytics via Coglab
+category: Single Page Application Development & Social API
+description: Plumlytics helps you deliver the Right Message, to the Right Audience, on the Right Channel, at the Right Moment.
+live: https://plumlytics.com
+
+---

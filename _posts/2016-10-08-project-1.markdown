@@ -1,0 +1,13 @@
+---
+layout: default
+modal-id: 1
+date: 2016-07-18
+img: TS.png
+alt: TS portal dashboard
+project-date: Oct 2016
+client: DevFactory
+category: Single Page Application Development
+description: Continues improvement. It is intelligence testing services, based on image recognition or similar!
+page: http://ts-portal.devfactory.com
+
+---
