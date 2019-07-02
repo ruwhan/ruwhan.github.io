@@ -1,0 +1,13 @@
+---
+layout: default
+modal-id: 3
+date: 2016-07-01
+img: TS.png
+alt: TS portal dashboard
+project-date: Jul 2016
+client: DevFactory
+category: Front end development, data visualisations,
+description: Continues improvement. It is intelligence testing services, based on image recognition and AI.
+live: http://ts-portal.devfactory.com
+
+---
