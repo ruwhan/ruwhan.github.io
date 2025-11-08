@@ -1,0 +1,70 @@
+# Site settings
+title: "Rully W H - Professional Portfolio"
+description: "Professional portfolio and resume of Rully W H - showcasing skills, experience, and projects"
+url: "https://ruwhan.github.io" # Update this with your GitHub Pages URL
+baseurl: "" # Update this if your site will be in a subdirectory
+
+# Author settings
+author:
+  name: "Rully W H"
+  email: "your.email@example.com" # Update with your email
+  linkedin: "your-linkedin-username" # Update with your LinkedIn
+  github: "ruwhan" # Update with your GitHub username
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO Settings
+twitter:
+  username: your-twitter-username # Update if you have Twitter
+  card: summary
+
+facebook:
+  app_id: # Add Facebook App ID if you have one
+  publisher: # Add Facebook page URL if you have one
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      author: "Rully W H"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Rully W H"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed

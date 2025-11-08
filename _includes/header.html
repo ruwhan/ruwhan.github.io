@@ -1,0 +1,20 @@
+<div class="header-container">
+  <div class="site-title">
+    <h1><a href="{{ '/' | relative_url }}">{{ site.author.name }}</a></h1>
+    <p class="site-tagline">{{ site.description }}</p>
+  </div>
+  
+  <nav class="main-nav">
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/resume/' | relative_url }}">Resume</a></li>
+      {% if site.author.linkedin %}
+      <li><a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      {% endif %}
+      {% if site.author.github %}
+      <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>

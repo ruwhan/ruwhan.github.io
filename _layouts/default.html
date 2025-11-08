@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {% seo %}
+    
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <meta property="og:image" content="{{ page.image | default: site.author.image | absolute_url }}">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ site.twitter.username }}">
+    <meta name="twitter:creator" content="@{{ site.twitter.username }}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ page.image | default: site.author.image | absolute_url }}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ site.author.name }}",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "jobTitle": "{{ site.author.job_title | default: 'Professional' }}",
+      "description": "{{ site.description }}",
+      "sameAs": [
+        {% if site.author.linkedin %}"https://linkedin.com/in/{{ site.author.linkedin }}",{% endif %}
+        {% if site.author.github %}"https://github.com/{{ site.author.github }}"{% endif %}
+      ]
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        {% include header.html %}
+      </header>
+      
+      <main>
+        {{ content }}
+      </main>
+      
+      <footer>
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>

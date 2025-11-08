@@ -1,0 +1,14 @@
+<div class="footer-container">
+  <div class="footer-content">
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
+    <p>
+      {% if site.author.linkedin %}
+      <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> |
+      {% endif %}
+      {% if site.author.github %}
+      <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a> |
+      {% endif %}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a>
+    </p>
+  </div>
+</div>

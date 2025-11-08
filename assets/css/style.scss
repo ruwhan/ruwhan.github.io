@@ -1,0 +1,443 @@
+---
+---
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+// Variables
+$primary-color: #2563eb;
+$secondary-color: #64748b;
+$accent-color: #f59e0b;
+$text-color: #1e293b;
+$text-light: #64748b;
+$bg-color: #ffffff;
+$bg-light: #f8fafc;
+$border-color: #e2e8f0;
+
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// Base styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Header
+.header-container {
+  background: linear-gradient(135deg, $primary-color, #3b82f6);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+  
+  .site-title {
+    text-align: center;
+    
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      
+      a {
+        color: white;
+        text-decoration: none;
+        
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+    
+    .site-tagline {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+  }
+  
+  .main-nav {
+    margin-top: 2rem;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      
+      li {
+        margin: 0;
+        
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Hero Section
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $bg-light 0%, $bg-color 100%);
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, $primary-color, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: $text-light;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  
+  &.btn-primary {
+    background-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    }
+  }
+  
+  &.btn-secondary {
+    background-color: transparent;
+    color: $primary-color;
+    border-color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  &.btn-linkedin {
+    background-color: #0077b5;
+    color: white;
+    
+    &:hover {
+      background-color: darken(#0077b5, 10%);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-github {
+    background-color: #333;
+    color: white;
+    
+    &:hover {
+      background-color: darken(#333, 10%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Quick Info Section
+.quick-info {
+  padding: 3rem 0;
+  background-color: $bg-light;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    
+    .info-item {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      
+      h3 {
+        color: $primary-color;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+      
+      p {
+        color: $text-light;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, $primary-color, #3b82f6);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Page Layout
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: $text-light;
+      font-weight: 400;
+    }
+  }
+  
+  .page-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: $primary-color;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    
+    p {
+      margin-bottom: 1.5rem;
+    }
+    
+    ul, ol {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+    
+    strong {
+      font-weight: 600;
+      color: $text-color;
+    }
+    
+    blockquote {
+      border-left: 4px solid $primary-color;
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: $text-light;
+    }
+  }
+}
+
+// Resume Download Section
+.resume-download-section {
+  text-align: center;
+  padding: 3rem;
+  background-color: $bg-light;
+  border-radius: 12px;
+  margin: 2rem 0;
+  
+  .resume-file-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    display: inline-block;
+    
+    p {
+      margin: 0.5rem 0;
+      color: $text-light;
+      
+      strong {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+// Footer
+.footer-container {
+  background-color: $bg-light;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  border-top: 1px solid $border-color;
+  
+  .footer-content {
+    p {
+      margin: 0.5rem 0;
+      color: $text-light;
+      
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+  }
+  
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header-container .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .resume-download-section {
+    padding: 2rem 1rem !important;
+  }
+}
+
+// Print styles
+@media print {
+  .header-container,
+  .footer-container,
+  .hero-buttons,
+  .cta-section {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Icon styles
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// Container utility
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

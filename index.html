@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Rully W H - Professional Portfolio"
+description: "Welcome to the professional portfolio of Rully W H - showcasing skills, experience, and career achievements"
+---
+
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Hello, I'm {{ site.author.name }}</h1>
+    <p class="hero-subtitle">Welcome to my professional portfolio</p>
+    <div class="hero-buttons">
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn More About Me</a>
+      <a href="{{ '/resume/' | relative_url }}" class="btn btn-secondary">View My Resume</a>
+    </div>
+  </div>
+</div>
+
+<section class="quick-info">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-item">
+        <h3>Professional Experience</h3>
+        <p>Experienced professional with a diverse background in various industries and roles.</p>
+      </div>
+      <div class="info-item">
+        <h3>Skills & Expertise</h3>
+        <p>Comprehensive skill set developed through years of practical experience and continuous learning.</p>
+      </div>
+      <div class="info-item">
+        <h3>Career Highlights</h3>
+        <p>Proven track record of achievements and contributions to organizational success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Connect?</h2>
+    <p>I'm always interested in new opportunities and professional connections.</p>
+    <div class="cta-buttons">
+      {% if site.author.linkedin %}
+      <a href="https://linkedin.com/in/{{ site.author.linkedin }}" class="btn btn-linkedin" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      {% endif %}
+      {% if site.author.github %}
+      <a href="https://github.com/{{ site.author.github }}" class="btn btn-github" target="_blank" rel="noopener">View My GitHub</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
