@@ -1,10 +1,10 @@
 // Main JavaScript functionality for the Jekyll site
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling for anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    // Enhanced animations and interactions
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -17,18 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add loading animation for external links
-    const externalLinks = document.querySelectorAll('a[target="_blank"]');
-    externalLinks.forEach(link => {
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.addEventListener('click', function() {
-            // Add a subtle loading indicator
             this.style.opacity = '0.7';
-            setTimeout(() => {
-                this.style.opacity = '1';
-            }, 200);
         });
     });
 
-    // Add fade-in animation for elements when they come into view
+    // Enhanced fade-in animation for elements on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -43,14 +38,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe elements for fade-in animation
-    const fadeElements = document.querySelectorAll('.info-item, .hero-content, .cta-section');
-    fadeElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(element);
+    // Observe elements for animation
+    document.querySelectorAll('.info-item, .cta-section').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
+
+    // Add mouse parallax effect to geometric shapes
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        document.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 50;
+            const rotateY = (centerX - x) / 50;
+            
+            heroSection.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            heroSection.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
+    }
 
     // Add keyboard navigation support
     document.addEventListener('keydown', function(e) {
