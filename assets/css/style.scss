@@ -1,7 +1,7 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+// Google Fonts are now loaded via <link> tags in the HTML head
 
 
 // Variables - Inspired by olaolu.dev vibrant design
@@ -298,6 +298,25 @@ body {
       box-shadow: 0 8px 25px rgba(#333, 0.5);
     }
   }
+}
+
+// Contact image blocks
+.contact-image {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.2rem 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  canvas {
+    display: block;
+  }
+}
+
+.contact-note {
+  color: $text-light;
+  font-size: 0.9rem;
 }
 
 // Quick Info Section - Enhanced with vibrant cards

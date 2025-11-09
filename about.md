@@ -32,6 +32,10 @@ As part of cross-functional teams, I ship features, fix bugs, estimate tasks, an
 
 ## Contact
 
-- Email: ruwhan@outlook.com
-- Phone: +62 813 8474 5574
+- Email:
+  <div class="contact-image" data-type="email" data-encoded="cnV3aGFu|QA==|b3V0bG9vay5jb20=" data-sep=" "></div>
+- Phone:
+  <div class="contact-image" data-type="phone" data-encoded="KzYy|ODEz|ODQ3NA==|NTU3NA==" data-sep=" "></div>
 - Location: Indonesia
+
+<p class="contact-note">For privacy, email and phone are displayed as images. Please connect via LinkedIn for direct messaging.</p>

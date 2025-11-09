@@ -12,8 +12,10 @@ permalink: /resume/
 - Name: Rully Wijoyo Hendrawan
 - Title: Sr Front End Engineer with Full Stack Experience
 - Location: Indonesia
-- Phone: +62 813 8474 5574
-- Email: ruwhan@outlook.com
+- Phone:
+  <div class="contact-image" data-type="phone" data-encoded="KzYy|ODEz|ODQ3NA==|NTU3NA==" data-sep=" "></div>
+- Email:
+  <div class="contact-image" data-type="email" data-encoded="cnV3aGFu|QA==|b3V0bG9vay5jb20=" data-sep=" "></div>
 
 ## Download
 

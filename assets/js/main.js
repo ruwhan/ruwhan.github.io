@@ -191,4 +191,100 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     console.log('Jekyll site JavaScript loaded successfully!');
+
+    // Render contact info as multi-segment canvas images to reduce scraping
+    (function renderContactImages() {
+        const nodes = document.querySelectorAll('.contact-image[data-encoded]');
+        if (!nodes.length) return;
+
+        // Base64 decode utility
+        function b64Decode(str) {
+            try {
+                // atob handles base64; decodeURIComponent handles potential UTF-8
+                return decodeURIComponent(escape(window.atob(str)));
+            } catch (e) {
+                // Fallback: return raw if decode fails
+                return str;
+            }
+        }
+
+        nodes.forEach(node => {
+            const encoded = (node.getAttribute('data-encoded') || '').split('|').filter(Boolean);
+            const sep = node.getAttribute('data-sep') || '';
+            const segments = encoded.map(b64Decode);
+
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Styling parameters
+            const dpr = Math.max(window.devicePixelRatio || 1, 1);
+            const fontSize = 16; // CSS px
+            const fontFamily = 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif';
+            const letterSpacing = 0; // canvas doesn't support letterSpacing; we simulate with x offsets
+            const segmentGap = ctx.measureText ? 8 : 8; // px gap between segments
+
+            ctx.font = `${fontSize}px ${fontFamily}`;
+            ctx.textBaseline = 'top';
+
+            // Measure total width and height
+            let totalWidth = 0;
+            const heights = [];
+            const widths = [];
+            segments.forEach((seg, i) => {
+                const metrics = ctx.measureText(seg);
+                const w = metrics.width;
+                widths.push(w);
+                heights.push(fontSize);
+                totalWidth += w;
+                if (i < segments.length - 1) totalWidth += segmentGap + (sep ? ctx.measureText(sep).width : 0);
+            });
+            const totalHeight = Math.max(...heights, fontSize);
+
+            // Size canvas with DPR scaling
+            canvas.width = Math.ceil(totalWidth * dpr);
+            canvas.height = Math.ceil(totalHeight * dpr);
+            canvas.style.width = `${Math.ceil(totalWidth)}px`;
+            canvas.style.height = `${Math.ceil(totalHeight)}px`;
+
+            // Scale for DPR
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            // Background for better OCR resistance (subtle noise)
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, totalWidth, totalHeight);
+            // Add subtle noise dots
+            ctx.fillStyle = 'rgba(0,0,0,0.04)';
+            for (let i = 0; i < Math.floor(totalWidth * 0.2); i++) {
+                const nx = Math.random() * totalWidth;
+                const ny = Math.random() * totalHeight;
+                ctx.fillRect(nx, ny, 0.5, 0.5);
+            }
+
+            // Draw segments with slight per-segment jitter to break linearity
+            ctx.fillStyle = '#111827';
+            ctx.font = `${fontSize}px ${fontFamily}`;
+            ctx.textBaseline = 'top';
+            let x = 0;
+            segments.forEach((seg, i) => {
+                const jitterY = (Math.random() - 0.5) * 0.6; // ±0.3px
+                ctx.fillText(seg, Math.round(x), Math.round(jitterY));
+                x += widths[i];
+                if (i < segments.length - 1) {
+                    if (sep) {
+                        ctx.fillText(sep, Math.round(x), Math.round((Math.random() - 0.5) * 0.6));
+                        x += ctx.measureText(sep).width;
+                    }
+                    x += segmentGap;
+                }
+            });
+
+            // Replace node contents with canvas
+            node.innerHTML = '';
+            node.appendChild(canvas);
+            // Prevent text selection/copy
+            node.setAttribute('aria-label', node.getAttribute('data-type') === 'email' ? 'Email image' : 'Phone image');
+            node.setAttribute('role', 'img');
+        });
+    })();
 });

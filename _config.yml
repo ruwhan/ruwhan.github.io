@@ -8,7 +8,7 @@ baseurl: "" # Update this if your site will be in a subdirectory
 author:
   name: "Rully W H"
   email: "your.email@example.com" # Update with your email
-  linkedin: "your-linkedin-username" # Update with your LinkedIn
+  linkedin: "rullyabuhusain" # LinkedIn handle from https://www.linkedin.com/in/rullyabuhusain
   github: "ruwhan" # Update with your GitHub username
 
 # Build settings
