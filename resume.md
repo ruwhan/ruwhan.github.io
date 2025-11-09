@@ -1,21 +1,21 @@
 ---
 layout: page
 title: "Resume"
-description: "Download and view the professional resume of Rully W H - comprehensive career history and qualifications"
+description: "Resume of Rully Wijoyo Hendrawan — Sr Front End Engineer with full stack experience"
 permalink: /resume/
 ---
 
 # Professional Resume
 
-## Download My Resume
+## Details
 
-You can download my complete professional resume in PDF format below. The resume contains detailed information about my:
+- Name: Rully Wijoyo Hendrawan
+- Title: Sr Front End Engineer with Full Stack Experience
+- Location: Indonesia
+- Phone: +62 813 8474 5574
+- Email: ruwhan@outlook.com
 
-- **Professional Experience**: Comprehensive work history with specific achievements
-- **Educational Background**: Academic qualifications and certifications
-- **Skills & Competencies**: Technical and soft skills relevant to my field
-- **Career Achievements**: Notable accomplishments and contributions
-- **Professional References**: Contact information for professional references
+## Download
 
 <div class="resume-download-section">
   <a href="{{ '/assets/files/resume-RULLY_W_H-v6.9.pdf' | relative_url }}" class="btn btn-primary btn-large" download>
@@ -26,44 +26,46 @@ You can download my complete professional resume in PDF format below. The resume
     </svg>
     Download Resume (PDF)
   </a>
-  
   <div class="resume-file-info">
     <p><strong>File:</strong> resume-RULLY_W_H-v6.9.pdf</p>
     <p><strong>Format:</strong> PDF</p>
     <p><strong>Version:</strong> 6.9 (Latest)</p>
   </div>
-</div>
+  <p class="resume-note">The PDF contains comprehensive details including full employment history, projects, and education.</p>
+  </div>
 
-## Resume Highlights
+## Profile
 
-### Professional Experience
-My resume showcases extensive experience across various roles and industries, demonstrating versatility and adaptability in different professional environments.
+Seasoned web developer since 2009. Working with JavaScript, and with React + Redux + TypeScript, helping mostly startup companies reach their MVP. Product-focused delivery and polished UI; hands-on with backend and infrastructure when needed.
 
-### Key Skills
-- Project management and execution
-- Team leadership and collaboration
-- Strategic planning and implementation
-- Client relationship management
-- Process improvement and optimization
+## Skills
 
-### Educational Background
-Comprehensive educational foundation supporting professional capabilities and continuous learning mindset.
+- React.js, Redux, TypeScript, JavaScript
+- CSS3, modern front end engineering
+- Ruby, Ruby on Rails, GraphQL, RESTful APIs
+- Algorithms, unit testing, software engineering fundamentals
+- User Experience (UX)
 
-### Achievements
-Documented track record of successful projects, initiatives, and contributions to organizational growth and success.
+## Employment History
 
-## Contact Information
+- Senior Software Engineer — The Economist (Bandung), Nov 2023 — Present
+  - AI Platform team; sprint planning, backlog refinement, bug fixing; front end plus back end and infrastructure contributions.
 
-For questions about my resume or to discuss professional opportunities, please connect with me through:
+- Sr. Front End Developer — Venngage (Toronto), May 2023 — Nov 2023
+  - Editor v2 team; shipping features and fixing bugs; involved math and 2D algorithms.
 
-{% if site.author.linkedin %}
-- **LinkedIn**: [{{ site.author.linkedin }}](https://linkedin.com/in/{{ site.author.linkedin }})
-{% endif %}
-{% if site.author.github %}
-- **GitHub**: [{{ site.author.github }}](https://github.com/{{ site.author.github }})
-{% endif %}
-- **Email**: Available upon request through professional networking platforms
+- Front End Full Stack Engineer — Turing.com (Remote), Nov 2021 — Dec 2022
+  - Client-facing roles for US startups: architecture, MVP delivery, team leadership, UI/UX input, timelines.
+
+## Selected Projects
+
+- Friyay — Project management tool; drag & drop intensive; also contributed to Ruby on Rails backend.
+- YachtZilla — Boat ride hailing startup; full stack web developer and software architect; Ruby on Rails, React, GraphQL.
+- Test Portal — DevFactory testing portal like BrowserStack; frontend developer for dashboards and pages; Angular (TypeScript).
+- LifeStak — Lifestyle/to-do app with calendar basis; frontend lead; AngularJS + ngRedux.
+- PanXpan — Marketing tooling; ASP.NET MVC + BackboneJS + Handsontable, later migrated to AngularJS.
+- UrTutor, Recommend.my, Keet Health, Blueboard Interaction, Plumlytics, BitPool, iMistAway, TrackAss, Diklat Dephub, CenterBridge.
 
 ---
 
-*Note: This resume is regularly updated to reflect current skills, experience, and career achievements. The PDF version contains the most comprehensive and up-to-date information.*
+For the complete details, including responsibilities and achievements for each role and project, download the PDF above.
