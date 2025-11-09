@@ -1,7 +1,8 @@
 ---
 ---
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 
 // Variables - Inspired by olaolu.dev vibrant design
 $primary-color: #6366f1;
@@ -47,7 +48,7 @@ body {
 
 // Header
 .header-container {
-  background: linear-gradient(135deg, $primary-color, #3b82f6);
+  background: $primary-color;
   color: white;
   padding: 2rem 0;
   margin-bottom: 3rem;
@@ -148,7 +149,7 @@ body {
 .hero-section {
   text-align: center;
   padding: 6rem 0;
-  background: linear-gradient(135deg, $bg-light 0%, $bg-color 100%);
+  background: $bg-light;
   border-radius: 20px;
   margin-bottom: 3rem;
   position: relative;
@@ -162,7 +163,7 @@ body {
     right: -50px;
     width: 200px;
     height: 200px;
-    background: linear-gradient(45deg, $geometric-purple, $geometric-pink);
+    background: $geometric-purple;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     animation: float 6s ease-in-out infinite;
     z-index: 1;
@@ -175,7 +176,7 @@ body {
     left: -30px;
     width: 150px;
     height: 150px;
-    background: linear-gradient(45deg, $geometric-orange, $geometric-blue);
+    background: $geometric-orange;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     animation: float 8s ease-in-out infinite reverse;
     z-index: 1;
@@ -191,12 +192,7 @@ body {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, $primary-color, $geometric-pink, $geometric-orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient 3s ease infinite;
-    background-size: 200% 200%;
+    color: $primary-color;
   }
   
   .hero-subtitle {
@@ -252,7 +248,7 @@ body {
   }
   
   &.btn-primary {
-    background: linear-gradient(135deg, $primary-color, $geometric-pink);
+    background: $primary-color;
     color: white;
     box-shadow: 0 4px 15px rgba($primary-color, 0.4);
     
@@ -268,7 +264,7 @@ body {
     border-color: $geometric-purple;
     
     &:hover {
-      background: linear-gradient(135deg, $geometric-purple, $geometric-pink);
+      background: $geometric-purple;
       color: white;
       border-color: transparent;
       transform: translateY(-3px) scale(1.05);
@@ -282,7 +278,7 @@ body {
   }
   
   &.btn-linkedin {
-    background: linear-gradient(135deg, #0077b5, #00a0dc);
+    background: #0077b5;
     color: white;
     box-shadow: 0 4px 15px rgba(#0077b5, 0.4);
     
@@ -293,7 +289,7 @@ body {
   }
   
   &.btn-github {
-    background: linear-gradient(135deg, #333, #666);
+    background: #333;
     color: white;
     box-shadow: 0 4px 15px rgba(#333, 0.4);
     
@@ -329,7 +325,7 @@ body {
     overflow: hidden;
     border: 2px solid transparent;
     
-    // Gradient border effect
+    // Solid border effect
     &::before {
       content: '';
       position: absolute;
@@ -337,7 +333,7 @@ body {
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, $geometric-purple, $geometric-pink, $geometric-orange);
+      background: $geometric-purple;
       border-radius: 20px;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -354,10 +350,7 @@ body {
       }
       
       h3 {
-        background: linear-gradient(135deg, $geometric-purple, $geometric-pink);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: $geometric-purple;
       }
     }
     
@@ -379,11 +372,11 @@ body {
   }
 }
 
-// CTA Section - Enhanced with vibrant gradient
+// CTA Section - Enhanced with solid vibrant color
 .cta-section {
   text-align: center;
   padding: 5rem 0;
-  background: linear-gradient(135deg, $geometric-purple, $geometric-pink, $geometric-orange);
+  background: $geometric-purple;
   color: white;
   border-radius: 20px;
   margin-bottom: 3rem;
