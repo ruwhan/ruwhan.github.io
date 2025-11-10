@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Developer Favicon</title>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#0f172a"/>
+  <!-- < symbol -->
+  <path d="M26 18 L16 32 L26 46" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- / symbol -->
+  <path d="M34 20 L30 44" fill="none" stroke="#a78bfa" stroke-width="5" stroke-linecap="round"/>
+  <!-- > symbol -->
+  <path d="M38 18 L48 32 L38 46" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
