@@ -76,10 +76,23 @@ This document captures the practical essentials to keep this site healthy, fast,
   - `robots.txt` is correct
   - Pages render correctly on mobile and desktop
 
+### Commit Hook (Pre-Commit)
+- This repo runs a production build automatically on each commit.
+- Hook path is configured to `.githooks`; the pre-commit script runs:
+  - `JEKYLL_ENV=production bundle exec jekyll build`
+- If the build fails, the commit is aborted. Fix errors and retry.
+- Requirements:
+  - Ruby + Bundler installed (`gem install bundler`)
+  - Gems installed (`bundle install`)
+- Troubleshooting:
+  - Ensure the hook is executable: `chmod +x .githooks/pre-commit`
+  - If hooks aren’t running, reconfigure: `git config core.hooksPath .githooks`
+
 ## Quick Checklists
 
 ### Pre-Commit
-- Build locally without errors: `bundle exec jekyll build`
+- Automatic: a production build runs via the pre-commit hook.
+- Manual check: `bundle exec jekyll build` should pass locally without errors.
 - Run local preview: `cd _site && python3 -m http.server 4000`
 - Scan for console errors and broken links
 - Verify key pages: `/`, `/resume/`, social links, resume download

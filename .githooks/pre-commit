@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[pre-commit] JEKYLL_ENV=production build starting..."
+
+# Ensure Bundler is available
+if ! command -v bundle >/dev/null 2>&1; then
+  echo "[pre-commit] Error: bundler not found. Install with: gem install bundler" >&2
+  exit 1
+fi
+
+# Run production build
+export JEKYLL_ENV=production
+bundle exec jekyll build
+
+echo "[pre-commit] Build succeeded. Proceeding with commit."
