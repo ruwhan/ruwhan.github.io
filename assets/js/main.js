@@ -287,4 +287,20 @@ document.addEventListener('DOMContentLoaded', function() {
             node.setAttribute('role', 'img');
         });
     })();
+
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+        // Only register on secure origins or localhost
+        const isLocalhost = ['localhost', '127.0.0.1'].includes(location.hostname);
+        const isSecure = location.protocol === 'https:';
+        if (isSecure || isLocalhost) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => {
+                    console.log('Service Worker registered:', reg.scope);
+                })
+                .catch(err => {
+                    console.warn('Service Worker registration failed:', err);
+                });
+        }
+    }
 });

@@ -70,6 +70,13 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+    <!-- PWA -->
+    <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Rully W H">
   </head>
 
   <body>
